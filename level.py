@@ -24,4 +24,7 @@ class Level:
 
                 if col == 'p':
                     self.player = Player((x, y), [self.visible_sprites], self.obstacle_sprites)
-
+                    
+    def run(self):
+        self.visible_sprites.custom_draw(self.player)
+        self.visible_sprites.update()
