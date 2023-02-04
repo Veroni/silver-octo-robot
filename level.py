@@ -10,7 +10,7 @@ class Level:
     def __init__(self):
 
         self.display_surface = pygame.display.get_surface()
-        self.visible_sprites = YSortCameraGroup()
+        self.visible_sprites = SortCamGroup()
         self.obstacle_sprites = pygame.sprite.Group()
 
         self.create_map()
@@ -48,3 +48,30 @@ class Level:
     def run(self):
         self.visible_sprites.custom_draw(self.player)
         self.visible_sprites.update()
+        
+        
+class SortCamGroup(pygame.sprite.Group):
+    def __init__(self):
+        super().__init__()
+        self.display_surface = pygame.display.get_surface()
+        self.half_screen_x = self.display_surface.get_size()[0] // 2
+        self.half_screen_y = self.display_surface.get_size()[1] // 2
+        self.offset = pygame.math.Vector2()
+
+        # creating a map
+        self.map_floor = pygame.image.load("./graphics/tilemap/map1.png").convert()
+        self.map_rect = self.map_floor.get_rect(topleft=(0, 0))
+
+    def custom_draw(self, player):
+        # getting the offset
+        self.offset.x = player.rect.centerx - self.half_screen_x
+        self.offset.y = player.rect.centery - self.half_screen_y
+
+        # drawing the map
+        map_offset = self.map_rect.topleft - self.offset
+        self.display_surface.blit(self.map_floor, map_offset)
+
+        for sprite in sorted(self.sprites(), key=lambda sprite: sprite.rect.centery):
+            offset_rect = sprite.rect.topleft - self.offset
+            self.display_surface.blit(sprite.image, offset_rect)
+            
