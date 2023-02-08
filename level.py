@@ -19,7 +19,7 @@ class Level:
 
     def create_map(self):
         layouts = {
-            'boundary': import_csv_layout("./graphics/map/map1.csv"),
+            'boundary': import_csv_layout("./graphics/map/map2.csv"),
             'grass': import_csv_layout("./graphics/map/map_Grass.csv"),
             'object': import_csv_layout("./graphics/map/map_LargeObjects.csv")
         }
@@ -68,7 +68,7 @@ class SortCamGroup(pygame.sprite.Group):
         self.offset = pygame.math.Vector2()
 
         # creating a map
-        self.map_floor = pygame.image.load("./graphics/tilemap/map1.png").convert()
+        self.map_floor = pygame.image.load("./graphics/tilemap/map2.png").convert()
         self.map_rect = self.map_floor.get_rect(topleft=(0, 0))
 
     def custom_draw(self, player):
