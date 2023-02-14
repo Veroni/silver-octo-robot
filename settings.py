@@ -5,6 +5,20 @@ HEIGHT = 720
 FPS = 60
 TILESIZE = 64
 
+BAR_H = 18
+HEALTH_BAR_W = 180
+ENERGY_BAR_W = 160
+ITEM_BAR = 80
+UI_FONT_SIZE = 18
+
+WATER_COL = '#71ddee'
+BG_COL = '#222222'
+BORDER_COL = '#111111'
+TEXT_COL = '#EEEEEE'
+HEALTH_COL = 'pink'
+ENERGY_COL = 'cyan'
+BORDER_COL_ACTIVE = 'gold'
+
 WORLD_MAP = [
     ['x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x', 'x'],
     ['x', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'x'],
