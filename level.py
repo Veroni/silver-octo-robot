@@ -44,8 +44,18 @@ class Level:
                         if style == 'object':
                             surf = graphics['objects'][int(col)]
                             Tile((x, y), [self.visible_sprites, self.obstacle_sprites], 'object', surf)
-
-        self.player = Player((2000, 1430), [self.visible_sprites], self.obstacle_sprites, self.create_attack, self.destroy_weapon)   
+                        if style == 'entity':
+                            if col == '394':
+                                self.player = Player(
+                                    (x, y),
+                                    [self.visible_sprites],
+                                    self.obstacle_sprites,
+                                    self.create_attack,
+                                    self.destroy_weapon,
+                                    self.create_magic)
+                            else:
+                                Creature('friend', (x, y), [self.visible_sprites])
+        
     def create_attack(self):
         self.current_attack = Weapon(self.player, [self.visible_sprites])
 
