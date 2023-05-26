@@ -1,4 +1,3 @@
 # silver-octo-robot
 
-Something bad happened on this planet. Lots of creatures are struggling. Our hero - Silver-octo-robot is here to help and to cure this planet's creatures. 
-Silver-octo-robot is equipped with several tools that he can use. 
+Something bad is happening on this planet. Creatures of the world are struggling. Our hero - Silver-octo-robot is here to help. Only Silver-octo-robot can cure this planet and restore the happiness. 
